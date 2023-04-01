@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 
 
 const App = () => {
-    const { theme } = useTheme()
+    const { theme } = useTheme();
     return (
         <div className={cl('app', {}, [theme])}>
             <Suspense fallback=''>

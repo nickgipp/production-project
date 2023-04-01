@@ -4,5 +4,9 @@
         "src/shared/config/i18n"
     ],
     "i18n-ally.sourceLanguage": "ru",
-    "i18n-ally.keystyle": "flat"
+    "i18n-ally.keystyle": "flat",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
