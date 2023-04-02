@@ -1,6 +1,4 @@
-import path from 'path';
-import webpack, { ResolveOptions } from 'webpack';
-import HTMLWebpackPlugin from 'html-webpack-plugin';
+import { ResolveOptions } from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildResolvers(options: BuildOptions): ResolveOptions {

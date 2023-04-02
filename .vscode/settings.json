@@ -1,12 +1,13 @@
 {
-    "i18n-ally.localesPaths": [
-        "public/locales",
-        "src/shared/config/i18n"
-    ],
+    "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
     "i18n-ally.sourceLanguage": "ru",
     "i18n-ally.keystyle": "flat",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "stylelint.enable": true,
+    "css.validate": true,
+    "scss.validate": true,
+    "stylelint.validate": ["css", "scss"]
 }
