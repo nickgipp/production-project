@@ -26,16 +26,11 @@ module.exports = {
         //     { printWidth: 2020 },
         // ],
 
-        // indent: [2, 4],
-        // quotes: ['error', 'single'],
-        // semi: ['error', 'always'],
+        quotes: ['error', 'single'],
+        semi: ['error', 'always'],
         'react/prop-types': 'off',
-        // 'react/react-in-jsx-scope': 'off',
-        // 'no-unused-vars': 'warn',
         '@typescript-eslint/ban-ts-comment': 'warn',
         '@typescript-eslint/no-var-requires': 0,
-
-        // 'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
@@ -50,7 +45,6 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-
         'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
     globals: {
