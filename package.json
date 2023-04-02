@@ -4,27 +4,36 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "start": " webpack serve --env port=3000",
         "build:prod": "webpack --env port=3000 mode=production",
         "build:dev": "webpack --env port=3000 mode=development",
         "lint": "eslint \"**/*.{ts,tsx}\"",
         "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
         "lint:scss": "npx stylelint \"**/*.scss\"",
-        "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix"
+        "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+        "unit": "jest --config ./config/jest/jest.config.ts",
+        "test": "jest"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.[t|j]sx?$": "babel-jest"
+        }
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "@babel/preset-typescript": "^7.21.4",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
         "@svgr/webpack": "^7.0.0",
+        "@types/jest": "^29.5.0",
         "@types/node": "^18.7.18",
         "@types/react-router-dom": "^5.3.3",
         "@types/webpack": "^5.28.0",
         "@types/webpack-dev-server": "^4.7.2",
         "@typescript-eslint/eslint-plugin": "^5.57.0",
         "@typescript-eslint/parser": "^5.57.0",
+        "babel-jest": "^29.5.0",
         "css-loader": "^6.7.1",
         "eslint": "^8.37.0",
         "eslint-config-prettier": "^8.8.0",
@@ -33,6 +42,8 @@
         "eslint-plugin-react": "^7.32.2",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.5.0",
+        "jest": "^29.5.0",
+        "jest-environment-jsdom": "^29.5.0",
         "mini-css-extract-plugin": "^2.6.1",
         "prettier": "2.8.7",
         "react-refresh": "^0.14.0",
