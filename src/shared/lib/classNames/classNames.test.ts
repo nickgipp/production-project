@@ -1,4 +1,4 @@
-import { classNames } from './classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
     test('should return single class name if no mods or additional classes are provided', () => {
