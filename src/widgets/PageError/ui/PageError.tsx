@@ -15,7 +15,7 @@ export function PageError({ error }) {
     return (
         <div role="alert" className={styles.pageError}>
             <p>{t('Something went wrong:')}</p>
-            <pre style={{ color: 'red' }}>{error.message}</pre>
+            <pre style={{ color: 'red' }}>{error?.message}</pre>
             <button onClick={reset}>{t('Try again')}</button>
         </div>
     );
