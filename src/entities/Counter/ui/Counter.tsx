@@ -23,10 +23,14 @@ export const Counter: React.FC<CounterProps> = (props) => {
     };
 
     return (
-        <div className={cl(styles.counter, className)}>
+        <div>
             <h1 data-testid="value-title">{counterValue}</h1>
-            <Button data-testid="inc-btn" onClick={inc}>inc</Button>
-            <Button data-testid="dec-btn" onClick={dec}>dec</Button>
+            <Button data-testid="inc-btn" onClick={inc}>
+                inc
+            </Button>
+            <Button data-testid="dec-btn" onClick={dec}>
+                dec
+            </Button>
         </div>
     );
 };
