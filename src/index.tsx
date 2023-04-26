@@ -7,16 +7,19 @@ import { PageError } from 'widgets/PageError';
 import { ModalConnector } from 'shared/ui/Modal/ModalConnector';
 import 'shared/config/i18n/i18n';
 import 'app/styles/index.scss';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 const root = createRoot(document.getElementById('root'));
 
 root.render(
-    <BrowserRouter>
-        <ThemeProvider>
-            <ErrorBoundary FallbackComponent={PageError}>
-                <ModalConnector />
-                <App />
-            </ErrorBoundary>
-        </ThemeProvider>
-    </BrowserRouter>
+    <StoreProvider>
+        <BrowserRouter>
+            <ThemeProvider>
+                <ErrorBoundary FallbackComponent={PageError}>
+                    <ModalConnector />
+                    <App />
+                </ErrorBoundary>
+            </ThemeProvider>
+        </BrowserRouter>
+    </StoreProvider>
 );
