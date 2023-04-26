@@ -1,10 +1,11 @@
 {
-    "Main page": "Main page",
-    "About us": "About us",
-    "Lang": "English",
-    "Lang Short": "En",
-    "Menu": "Menu",
-    "Page not found": "Page not found",
-    "Something went wrong:": "Something went wrong:",
-    "Try again": "Try again"
+  "Main page": "Main page",
+  "About us": "About us",
+  "Lang": "English",
+  "Lang Short": "En",
+  "Menu": "Menu",
+  "Page not found": "Page not found",
+  "Something went wrong:": "Something went wrong:",
+  "Try again": "Try again",
+  "Login": "Login"
 }

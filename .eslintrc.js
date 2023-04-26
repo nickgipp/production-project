@@ -13,13 +13,12 @@ module.exports = {
         'prettier',
         'plugin:storybook/recommended',
     ],
-    overrides: [],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'prettier'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'prettier', 'react-hooks'],
     rules: {
         // 'prettier/prettier': [
         //     'error',
@@ -38,7 +37,7 @@ module.exports = {
         'max-len': [
             'error',
             {
-                code: 120,
+                code: 100,
                 tabWidth: 4,
                 ignoreComments: true,
                 //"comments": 80
@@ -53,7 +52,8 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['warn'],
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -68,8 +68,19 @@ module.exports = {
                 markupOnly: true,
             },
         ],
+        'react-hooks/rules-of-hooks': 'error', // Проверяем правила хуков
+        'react-hooks/exhaustive-deps': 'error', // Проверяем зависимости эффекта
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off',
+            },
+        },
+    ],
 };

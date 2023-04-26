@@ -20,6 +20,7 @@ export const ThemeDecorator = (Story: Story, context: StoryContext) => {
 
     return (
         <ThemeProvider>
+            <div id="modal" />
             <div className={classNames('app', theme)}>
                 <Story />
             </div>

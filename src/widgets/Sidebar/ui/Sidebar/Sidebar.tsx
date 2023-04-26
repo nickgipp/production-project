@@ -23,7 +23,10 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         setCollapsed((prev) => !prev);
     };
     return (
-        <div data-testid="sidebar" className={cl(styles.sidebar, { [styles.collapsed]: collapsed }, className)}>
+        <div
+            data-testid="sidebar"
+            className={cl(styles.sidebar, { [styles.collapsed]: collapsed }, className)}
+        >
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
@@ -41,7 +44,11 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
                         <span className={styles.linkText}>{t('Main page')}</span>
                     </div>
                 </AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about} className={styles.link}>
+                <AppLink
+                    theme={AppLinkTheme.SECONDARY}
+                    to={RoutePath.about}
+                    className={styles.link}
+                >
                     <div className={styles.item}>
                         <AboutPageIcon className={styles.icon} />
                         <span className={styles.linkText}>{t('About us')}</span>
