@@ -24,8 +24,8 @@ export const globalTypes = {
             // https://5a375b97f4b14f0020b0cda3-wbeulgbetj.chromatic.com/?path=/story/basics-icon--labels
             icon: 'circlehollow',
             items: [
-                { value: 'light', title: 'Light' },
-                { value: 'dark', title: 'Dark' },
+                { value: 'app_light_theme', title: 'Light' },
+                { value: 'app_dark_theme', title: 'Dark' },
             ],
             showName: true,
             dynamicTitle: true,

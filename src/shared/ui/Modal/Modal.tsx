@@ -1,3 +1,4 @@
+import { useTheme } from 'app/providers/ThemeProvider';
 import cl from 'classnames';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from '../Portal/Portal';
@@ -13,12 +14,11 @@ interface ModalProps {
 const ANIMATION_DELAY = 50;
 
 export const Modal: React.FC<ModalProps> = (props) => {
-    // TODO: Доделать черную тему
-    
+    // TODO: Проверить сторибук
+
     const { isOpen, setIsOpen, children, className } = props;
 
     const [isClosing, setIsClosing] = useState(false);
-
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = useCallback(() => {
@@ -63,7 +63,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
     return (
         <Portal element={modalElem || undefined}>
-            <div className={cl(styles.modal, mods, [className])}>
+            <div className={cl(styles.modal, mods, className)}>
                 <div className={styles.overlay} onClick={closeHandler}>
                     <div className={styles.content} onClick={onContentClick}>
                         {children}
