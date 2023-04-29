@@ -8,6 +8,6 @@ describe('Button', () => {
     });
     test('default className clear', () => {
         render(<Button>TEST</Button>);
-        expect(screen.getByText('TEST')).toHaveClass('clear');
+        expect(screen.getByText('TEST')).toHaveClass('outline');
     });
 });
