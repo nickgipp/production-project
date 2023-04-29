@@ -28,7 +28,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     const {
         className,
         children,
-        theme = ButtonTheme.CLEAR,
+        theme = ButtonTheme.OUTLINE,
         square,
         size = ButtonSize.M,
         ...otherProps

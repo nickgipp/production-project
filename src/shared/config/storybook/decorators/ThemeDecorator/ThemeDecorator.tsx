@@ -19,10 +19,12 @@ export const ThemeDecorator = (Story: Story, context: StoryContext) => {
     } = context;
 
     return (
-        <ThemeProvider>
-            <body className={classNames('app', theme)}>
+        <body className={classNames('app', theme)}>
+            <ThemeProvider>
+                {/* <body className={classNames('app', theme)}> */}
                 <Story />
-            </body>
-        </ThemeProvider>
+                {/* </body> */}
+            </ThemeProvider>
+        </body>
     );
 };
