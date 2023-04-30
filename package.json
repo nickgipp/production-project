@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": " webpack serve --env port=3010",
-    "start:dev:server":"node ./json-server/index.js",
+    "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack --env port=3010 mode=production",
     "build:dev": "webpack --env port=3010 mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
@@ -15,7 +15,8 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test": "jest",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build -c ./config/storybook"
+    "storybook:build": "storybook build -c ./config/storybook",
+    "prepare": "husky install"
   },
   "jest": {
     "transform": {
@@ -80,7 +81,8 @@
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
