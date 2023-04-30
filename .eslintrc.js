@@ -28,7 +28,7 @@ module.exports = {
         // ],
         quotes: ['error', 'single'],
         semi: ['error', 'always'],
-        'react/display-name': 'warn',
+        'react/display-name': 'off',
         'react/prop-types': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
         '@typescript-eslint/no-var-requires': 0,
@@ -37,7 +37,7 @@ module.exports = {
         'max-len': [
             'error',
             {
-                code: 100,
+                code: 120,
                 tabWidth: 4,
                 ignoreComments: true,
                 //"comments": 80

@@ -9,5 +9,8 @@
   "Try again": "Попробовать снова",
   "Login": "Войти",
   "Username": "Никнейм",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "Form authorizations": "Форма авторизации",
+  "Logout": "Выйти",
+  "Invalid username or password": "Неверный логин или пароль"
 }

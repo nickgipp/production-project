@@ -16,6 +16,7 @@
                 "message": "Цвета ключевыми словами нельзя писать"
             }
         ],
+        "color-function-notation": null,
         "color-no-invalid-hex": [
             true,
             {

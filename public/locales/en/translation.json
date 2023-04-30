@@ -9,5 +9,8 @@
   "Try again": "Try again",
   "Login": "Login",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "Form authorizations": "Form authorizations",
+  "Logout": "Logout",
+  "Invalid username or password": "Invalid username or password"
 }
