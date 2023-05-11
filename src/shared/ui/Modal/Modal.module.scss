@@ -41,6 +41,8 @@
 }
 
 .isClosing {
+    opacity: 0;
+
     .content {
         transform: scale(0.5);
     }

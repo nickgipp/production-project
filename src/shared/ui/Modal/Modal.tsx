@@ -3,6 +3,7 @@ import cl from 'classnames';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
+import { modal } from './ModalConnector';
 
 interface ModalProps {
     isOpen?: boolean;
@@ -11,7 +12,7 @@ interface ModalProps {
     className?: string;
 }
 
-const ANIMATION_DELAY = 50;
+const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<ModalProps> = (props) => {
     // TODO: Проверить сторибук
@@ -27,6 +28,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
             timerRef.current = setTimeout(() => {
                 setIsOpen(false);
                 setIsClosing(false);
+                
             }, ANIMATION_DELAY);
         }
     }, [setIsOpen]);
@@ -66,7 +68,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
             <div className={cl(styles.modal, mods, className)}>
                 <div className={styles.overlay} onClick={closeHandler}>
                     <div className={styles.content} onClick={onContentClick}>
-                        {children}
+                        {isOpen && children}
                     </div>
                 </div>
             </div>

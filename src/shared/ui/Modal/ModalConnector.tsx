@@ -20,13 +20,7 @@ export const ModalConnector = () => {
     const [props, setProps] = useState<IModalParams>({});
 
     const openModal = useCallback(
-        ({
-            component,
-            props,
-        }: {
-            component: React.ReactNode;
-            props: IModalParams;
-        }) => {
+        ({ component, props }: { component: React.ReactNode; props: IModalParams }) => {
             setContent(component);
             setProps(props);
             setIsOpen(true);
@@ -34,7 +28,10 @@ export const ModalConnector = () => {
         [setContent, setProps, setIsOpen]
     );
 
-    const closeModal = useCallback(() => setIsOpen(false), [setIsOpen]);
+    const closeModal = useCallback(() => {
+        setIsOpen(false);
+        setContent(<></>);
+    }, [setIsOpen]);
 
     useEffect(() => {
         ev.on('open', openModal);
