@@ -36,7 +36,7 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
 
     const onChangePassword = useCallback(
         (value) => {
-            dispatch(loginActions.setPasswors(value));
+            dispatch(loginActions.setPassword(value));
         },
         [dispatch]
     );
