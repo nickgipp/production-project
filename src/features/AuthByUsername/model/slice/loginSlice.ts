@@ -29,8 +29,6 @@ export const loginSlice = createSlice({
             })
             .addCase(loginByUsername.fulfilled, (state) => {
                 state.isLoading = false;
-                // TODO: Вынести
-                modal.close();
             })
             .addCase(loginByUsername.rejected, (state, action) => {
                 state.isLoading = false;

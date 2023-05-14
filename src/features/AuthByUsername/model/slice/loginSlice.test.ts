@@ -1,8 +1,9 @@
+import { AnyAction } from '@reduxjs/toolkit';
 import { loginActions, loginReducer } from './loginSlice';
 
 describe('login reducer', () => {
     it('should return the initial state', () => {
-        expect(loginReducer(undefined, {})).toEqual({
+        expect(loginReducer(undefined, {} as AnyAction)).toEqual({
             username: '',
             password: '',
             isLoading: false,

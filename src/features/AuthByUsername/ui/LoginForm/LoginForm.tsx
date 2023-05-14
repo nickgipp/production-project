@@ -1,19 +1,21 @@
-import cl from 'classnames';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Button } from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import styles from './LoginForm.module.scss';
 import { getLoginState } from '../../model/selectors/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import cl from 'classnames';
+import styles from './LoginForm.module.scss';
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -21,11 +23,10 @@ const initialReducers: ReducersList = {
 };
 
 const LoginForm: React.FC<LoginFormProps> = memo((props) => {
-    const { className } = props;
+    const { className, onSuccess } = props;
     const { t } = useTranslation();
     const loginState = useSelector(getLoginState);
-    // TODO: Убрать any
-    const dispatch = useDispatch<any>();
+    const dispatch = useAppDispatch();
 
     const onChangeUsername = useCallback(
         (value) => {
@@ -41,9 +42,14 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
         [dispatch]
     );
 
-    const onLoginClick = useCallback(() => {
-        return dispatch(loginByUsername({ username: loginState?.username, password: loginState?.password }));
-    }, [dispatch, loginState?.password, loginState?.username]);
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(
+            loginByUsername({ username: loginState?.username, password: loginState?.password })
+        );
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+    }, [dispatch, loginState?.password, loginState?.username, onSuccess]);
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>

@@ -4,12 +4,13 @@ import styles from './ThemeSwitcher.module.scss';
 import ThemeIcon from 'shared/assets/icons/Theme.svg';
 import { Button } from 'shared/ui';
 import { ButtonTheme } from 'shared/ui/Button/Button';
+import { memo } from 'react';
 
 interface ThemeSwitcherProps {
     className?: string;
 }
 
-export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
+export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = memo((props) => {
     const { className } = props;
     const { theme, toggleTheme } = useTheme();
     return (
@@ -23,4 +24,4 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
             <ThemeIcon />
         </Button>
     );
-};
+});
