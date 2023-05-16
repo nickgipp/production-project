@@ -20,7 +20,7 @@ export default {
         'entities/(.*)': '<rootDir>src/entities/$1',
     },
     modulePaths: ['<rootDir>'],
-    globals: { __IS_DEV__: true },
+    globals: { __IS_DEV__: true, __API__: '' },
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 

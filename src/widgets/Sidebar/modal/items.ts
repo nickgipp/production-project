@@ -1,7 +1,7 @@
 import { RoutePath } from 'app/config/routeConfig/routeConfig';
-import MainPageIcon from 'shared/assets/Icons/MainPageIcon.svg';
-import AboutPageIcon from 'shared/assets/Icons/AboutPageIcon.svg';
-import ProfilePageIcon from 'shared/assets/Icons/ProfilePageIcon.svg';
+import MainPageIcon from 'shared/assets/icons/MainPageIcon.svg';
+import AboutPageIcon from 'shared/assets/icons/AboutPageIcon.svg';
+import ProfilePageIcon from 'shared/assets/icons/ProfilePageIcon.svg';
 
 export interface SidebarItemType {
     path: string;
