@@ -1,5 +1,5 @@
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import { memo, useCallback } from 'react';
+import { memo, MouseEventHandler, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Button } from 'shared/ui';
@@ -41,15 +41,20 @@ const LoginForm: React.FC<LoginFormProps> = memo((props) => {
         },
         [dispatch]
     );
+    const onLoginClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+        event.preventDefault();
+    };
 
-    const onLoginClick = useCallback(async () => {
-        const result = await dispatch(
-            loginByUsername({ username: loginState?.username, password: loginState?.password })
-        );
-        if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess();
-        }
-    }, [dispatch, loginState?.password, loginState?.username, onSuccess]);
+    // const onLoginClick = useCallback(async () => {
+    //     if (loginState?.username && loginState?.password) {
+    //         const result = await dispatch(
+    //             loginByUsername({ username: loginState?.username, password: loginState.password })
+    //         );
+    //         if (result.meta.requestStatus === 'fulfilled') {
+    //             onSuccess();
+    //         }
+    //     }
+    // }, [dispatch, loginState?.password, loginState?.username, onSuccess]);
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>

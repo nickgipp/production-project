@@ -1,9 +1,7 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import cl from 'classnames';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { Portal } from '../Portal/Portal';
 import styles from './Modal.module.scss';
-import { modal } from './ModalConnector';
 
 interface ModalProps {
     isOpen?: boolean;
@@ -20,7 +18,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
     const { isOpen, setIsOpen, children, className } = props;
 
     const [isClosing, setIsClosing] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     const closeHandler = useCallback(() => {
         if (setIsOpen) {
@@ -28,7 +26,6 @@ export const Modal: React.FC<ModalProps> = (props) => {
             timerRef.current = setTimeout(() => {
                 setIsOpen(false);
                 setIsClosing(false);
-                
             }, ANIMATION_DELAY);
         }
     }, [setIsOpen]);
@@ -56,7 +53,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Record<string, boolean | undefined> = {
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing,
     };

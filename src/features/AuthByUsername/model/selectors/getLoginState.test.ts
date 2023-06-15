@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { getLoginState } from './getLoginState';
 
@@ -27,6 +26,6 @@ describe('getLoginState', () => {
                 error: 'error',
             },
         };
-        expect(getLoginState(state as StateSchema).error).toEqual('error');
+        expect(getLoginState(state as StateSchema)?.error).toEqual('error');
     });
 });

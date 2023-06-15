@@ -34,7 +34,7 @@ export const Button: React.FC<ButtonProps> = memo((props) => {
         ...otherProps
     } = props;
 
-    const mods: Record<string, boolean> = {
+    const mods = {
         [styles[theme]]: true,
         [styles.square]: square,
         [styles[size]]: true,
